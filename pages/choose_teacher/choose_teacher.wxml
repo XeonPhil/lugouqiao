@@ -1,0 +1,8 @@
+<!--choose_teacher.wxml-->
+<text>选择老师</text>
+<checkbox-group bindchange="checkboxgroupBindchange" class="userinfo">
+  <checkbox value="checkbox1">陈伟老师</checkbox>
+  <checkbox value="checkbox2">杨成老师</checkbox>
+  <checkbox value="checkbox3">郭翀老师</checkbox>
+</checkbox-group>
+<view>提示：{{text}}</view>

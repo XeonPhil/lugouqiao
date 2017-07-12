@@ -1,0 +1,14 @@
+/* main.wxss */
+.container1
+{
+  height: 100%;
+  width: 100%;
+  background-color: beige;
+}
+.item1
+{
+  height: 200rpx;
+  width: 100%;
+  background-color: gainsboro;
+  border: 1px solid #fff;
+}

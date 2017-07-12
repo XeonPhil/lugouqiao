@@ -1,0 +1,30 @@
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view>    
+<!--首页-->  
+<view hidden="{{currentTab!==0}}">  
+<view class="input1">
+<textarea class="input" style="color:lightgrey" placeholder="  想要留言..."></textarea>
+</view>
+<view style="height:25%" class="input">
+<image src="addimage.png" class="image1"></image>
+</view>
+<navigator url="../choose_teacher/choose_teacher">
+<view class="input2">
+<text>  留言给...</text>
+</view>
+</navigator>
+
+<view class="buttonview">
+<button style="opacity: {{opacity}};color: green;border-color: green" disabled="{{disabled}}" loading="{{loginLoading}}" size="mini" class="button1" form-type="submit" plain>预览</button>
+<button size="mini" style="opacity: {{opacity}};color: white;background-color: green;border-color:green" class="button2" bindtap="upMessage">发布</button>
+</view>
+</view>  
+  <!--搜索-->  
+<view hidden="{{currentTab!==1}}">
+<view wx:for="{{logs1}}">
+{{index}}
+<view>内容{{item.text}}</view>
+<view>发送者{{item.senderName}}</view>
+</view>
+</view>

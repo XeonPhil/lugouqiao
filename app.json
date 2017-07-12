@@ -1,12 +1,40 @@
-sadasdsadadasddsdsfds{
-  "pages":[
+{
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/main/main",
+    "pages/info/info",
+    "pages/test/test1",
+    "pages/choose_teacher/choose_teacher"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "卢沟桥",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "通知"
+      },
+      {
+        "pagePath": "pages/test/test1",
+        "text": "留言"
+      },
+      {
+        "pagePath": "pages/test/test1",
+        "text": "课堂"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的"
+      }
+    ]
   }
 }

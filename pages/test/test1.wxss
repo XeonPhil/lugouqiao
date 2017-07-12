@@ -1,0 +1,80 @@
+/* test1.wxss */
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+  background-color: lightgray;
+} 
+.input{
+  height: 150px;
+  width: 100%;
+  background-color: white;
+} 
+.input1{
+  height: 150px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid lightgray;
+  border-top: 15px solid lightgray;
+} 
+.input2{
+  height: 80rpx;
+  width: 100%;
+  background-color: white;
+  border-top: 20px solid lightgray;
+  display: flex;
+  align-items: center;
+} 
+.comment{
+  height: 250rpx;
+  background-color: white;
+  width: 100%;
+  border: 1px solid lightgray;
+}
+.buttonview{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  background-color: lightgray;
+}
+.button1{
+  margin-top: 10%;
+  margin-left: 50%;
+  /*margin-right: 45%;*/
+}
+.button2{
+  margin-top: 10%;
+/*  margin-left: 75%;
+  /*margin-right: 5%;*/
+}
+.image1{
+  width: 80px;
+  height: 80px;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+.navbar{  
+  flex: none;  
+  display: flex;  
+  background: #fff;  
+}  
+.navbar .item{  
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height: 80rpx;  
+}  
+.navbar .item.active{  
+  color: #FFCC00;  
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: #FFCC00;  
+}  
