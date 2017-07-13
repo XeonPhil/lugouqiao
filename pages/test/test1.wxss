@@ -3,7 +3,7 @@ page{
   display: flex;  
   flex-direction: column;  
   height: 100%;  
-  background-color: lightgray;
+  background-color:#efeff4;
 } 
 .input{
   height: 150px;
@@ -11,17 +11,17 @@ page{
   background-color: white;
 } 
 .input1{
-  height: 150px;
+  height: 200px;
   width: 100%;
   background-color: white;
-  border-bottom: 2px solid lightgray;
-  border-top: 15px solid lightgray;
+  border-bottom: 2px solid #efeff4;
+  border-top: 15px solid #efeff4;
 } 
 .input2{
   height: 80rpx;
   width: 100%;
   background-color: white;
-  border-top: 20px solid lightgray;
+  border-top: 20px solid #efeff4;
   display: flex;
   align-items: center;
 } 
@@ -29,14 +29,14 @@ page{
   height: 250rpx;
   background-color: white;
   width: 100%;
-  border: 1px solid lightgray;
+  border: 1px solid #efeff4;
 }
 .buttonview{
   display: flex;
   flex-direction: row;
   height: 100%;
   width: 100%;
-  background-color: lightgray;
+  margin-top: 14%;
 }
 .button1{
   margin-top: 10%;
@@ -78,3 +78,17 @@ page{
   height: 4rpx;  
   background: #FFCC00;  
 }  
+.liuyan{
+  background: white;
+  border-bottom: 1px solid #efeff4;
+  line-height: 25px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.jiaobiao{
+  width: 50%;
+}
+.duiqi{
+  display:flex;
+}

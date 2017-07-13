@@ -2,9 +2,11 @@ Page({
   data:{
     // text:"这是一个页面"
     text:''
+
   },
   checkboxgroupBindchange:function(e){
     var temp1=e.detail.value
+   
     var temp2=''
     console.log(temp1)
     if(temp1.length!=0){
@@ -16,9 +18,14 @@ Page({
       })
     }else{
       this.setData({
-        text:''
+        text:'您选择了：'
       })
     }
     
+  },
+  upChoose:function(e){
+    wx.navigateTo({
+      url: '../log/logs'
+    })
   }
 })

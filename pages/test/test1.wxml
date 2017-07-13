@@ -3,28 +3,42 @@
 </view>    
 <!--首页-->  
 <view hidden="{{currentTab!==0}}">  
+<form bindsubmit="msgSubmit">
 <view class="input1">
-<textarea class="input" style="color:lightgrey" placeholder="  想要留言..."></textarea>
+<textarea bindblur="charchange" class="input" valeue="{{inputMsg}}" style="color:lightgrey" placeholder="  想要留言..."></textarea>
 </view>
-<view style="height:25%" class="input">
+<!--<view style="height:25%" class="input">
 <image src="addimage.png" class="image1"></image>
-</view>
+</view>-->
 <navigator url="../choose_teacher/choose_teacher">
 <view class="input2">
+
 <text>  留言给...</text>
 </view>
 </navigator>
 
 <view class="buttonview">
 <button style="opacity: {{opacity}};color: green;border-color: green" disabled="{{disabled}}" loading="{{loginLoading}}" size="mini" class="button1" form-type="submit" plain>预览</button>
-<button size="mini" style="opacity: {{opacity}};color: white;background-color: green;border-color:green" class="button2" bindtap="upMessage">发布</button>
+<button size="mini" style="opacity: {{opacity}};color: white;background-color: green;border-color:green" class="button2" form-type="submit">发布</button>
 </view>
+</form>
 </view>  
   <!--搜索-->  
 <view hidden="{{currentTab!==1}}">
-<view wx:for="{{logs1}}">
-{{index}}
-<view>内容{{item.text}}</view>
-<view>发送者{{item.senderName}}</view>
+<view wx:for="{{logs1}}" class="liuyan" >
+<text style="color:lightgrey;font-size:13px " >
+To:{{item.receiverName}}</text>
+  <!--<text class="text1">第{{index}}条留言</text>--> 
+
+<view>内容:{{item.text}}</view>
+<view><text style="font-size:13px ">————回答:{{item.text}}</text></view>
+<view>发送者:{{item.senderName}}</view>
+<view class="duiqi">
+<view class="jiaobiao">
+<text style="color:lightgrey;font-size:13px " >2017-5-15\t某老师</text></view>
+<view class="jiaobiao">
+<text style="color:green;font-size:13px;">已反馈</text></view>
+</view>
+
 </view>
 </view>

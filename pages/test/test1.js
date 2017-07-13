@@ -1,11 +1,12 @@
-var app = getApp()
-var Util = require('../../utils/util.js');
+    var app = getApp()
+//var Util = require('../../utils/util.js');
 Page({  
   data: {  
     navbar: ['发布留言', '留言反馈'],  
     currentTab: 0,
     logs1:[],  
-    text:''
+    text:'',
+    inputMsg:''
     },
     onLoad:function()
     {
@@ -33,15 +34,28 @@ Page({
         fail:function(err){}
       })
     },
-    upMessage:function(e){
-      var that=this;
-      wx.request({
-        url: 'https://xeonphil.top/message/push/o6_bmasdasdsad6_2sgVt7hMZOPfL/5go5gm50g5ogm2omg0h289xjkf3f',
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }, 
-        data: Util.json2Form({text: "OK"}),
-        method:'POST',
+    charchange:function(e){
+      this.setData({
+        inputMsg:e.detail.value
       })
-    }  
+      console.log(this.data.inputMsg)
+    },  
+    msgSubmit: function(e){
+      this.setData({
+        inputMsg:this.data.inputMsg,
+      })
+      var that = this;
+      wx.request({
+        url: 'https://xeonphil.top/message/push/o4_bmasdasdsad6_4sgVt7hMZOPfL/idsh6jxhjc6jvxvnjrnnc82bch6vk',
+//        header: { "Content-Type": "application/json"},
+        data: {text: this.data.inputMsg},
+        method: 'POST',
+      })
+      wx.showToast({
+        title: '成功',
+        icon: 'success',
+        duration: 2000
+      })
+      this.getdata();
+    }
         })  

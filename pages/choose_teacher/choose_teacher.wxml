@@ -1,8 +1,18 @@
 <!--choose_teacher.wxml-->
-<text>选择老师</text>
+
+<view class="selectte"><text>选择老师</text></view>
+
+<view class="list">
 <checkbox-group bindchange="checkboxgroupBindchange" class="userinfo">
-  <checkbox value="checkbox1">陈伟老师</checkbox>
-  <checkbox value="checkbox2">杨成老师</checkbox>
-  <checkbox value="checkbox3">郭翀老师</checkbox>
+<view class="laoshi"> <checkbox  value="陈伟老师">陈伟老师</checkbox></view>
+<view class="laoshi">
+  <checkbox value="杨成老师">杨成老师</checkbox>
+ </view>
+ <view class="laoshi">
+  <checkbox value="郭翀老师">郭翀老师</checkbox>
+  </view>
 </checkbox-group>
-<view>提示：{{text}}</view>
+</view>
+<view class="xuanze"><text style="color:cornflowerblue">从老师的名单中选择</text></view>
+<view class="xuanze">{{text}}</view>
+<button size="mini" style="opacity: {{opacity}};color: white;background-color: green;border-color:green" class="fabu" bindtap="upChoose">确定</button>

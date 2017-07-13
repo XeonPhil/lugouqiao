@@ -20,18 +20,26 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
+      "selectedIconPath":"images/paper_plane 2.png",
+        "iconPath": "images/paper_plane.png",
         "pagePath": "pages/main/main",
         "text": "通知"
       },
       {
+        "selectedIconPath": "images/alert_horn2.png",
+        "iconPath": "images/alert_horn.png",
         "pagePath": "pages/test/test1",
         "text": "留言"
       },
       {
-        "pagePath": "pages/test/test1",
+        "selectedIconPath": "images/open_book2.png",
+        "iconPath": "images/open_book.png",
+        "pagePath": "pages/info/info",
         "text": "课堂"
       },
       {
+        "selectedIconPath": "images/home_176px_1201101_easyicon.net 2.png",
+        "iconPath": "images/home_176px_1201101_easyicon.net.png",
         "pagePath": "pages/index/index",
         "text": "我的"
       }
