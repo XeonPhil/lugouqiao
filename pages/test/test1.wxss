@@ -92,3 +92,4 @@ page{
 .duiqi{
   display:flex;
 }
+input::-ms-input-placeholder{color: #aab2bd;font-size: 12px; text-align: right;}

@@ -1,16 +1,23 @@
-    var app = getApp()
-//var Util = require('../../utils/util.js');
+ var app = getApp()
 Page({  
   data: {  
     navbar: ['发布留言', '留言反馈'],  
     currentTab: 0,
     logs1:[],  
     text:'',
-    inputMsg:''
+    inputMsg:'',
+    array: ['陈伟', '雷玲', '于瀛', '蓝善祯', '徐品'],
+    index: 0
     },
     onLoad:function()
     {
       this.getdata();
+    },
+    bindPickerChange: function (e) {
+      // console.log('picker发送选择改变，携带值为', e.detail.value)
+      this.setData({
+        index: e.detail.value
+      })
     },
     navbarTap: function (e) {
 //      console.log(1);

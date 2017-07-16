@@ -5,20 +5,19 @@
 <view hidden="{{currentTab!==0}}">  
 <form bindsubmit="msgSubmit">
 <view class="input1">
-<textarea bindblur="charchange" class="input" valeue="{{inputMsg}}" style="color:lightgrey" placeholder="  想要留言..."></textarea>
+<textarea bindblur="charchange" class="input" valeue="{{inputMsg}}" style="color:black" placeholder="  想要留言..."></textarea>
 </view>
-<!--<view style="height:25%" class="input">
-<image src="addimage.png" class="image1"></image>
-</view>-->
-<navigator url="../choose_teacher/choose_teacher">
-<view class="input2">
 
-<text>  留言给...</text>
+<view class="input2">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      选择老师：{{array[index]}}
+    </view>
+  </picker>
 </view>
-</navigator>
 
 <view class="buttonview">
-<button style="opacity: {{opacity}};color: green;border-color: green" disabled="{{disabled}}" loading="{{loginLoading}}" size="mini" class="button1" form-type="submit" plain>预览</button>
+<!--<button style="opacity: {{opacity}};color: green;border-color: green" disabled="{{disabled}}" loading="{{loginLoading}}" size="mini" class="button1" form-type="submit" plain>预览</button>-->
 <button size="mini" style="opacity: {{opacity}};color: white;background-color: green;border-color:green" class="button2" form-type="submit">发布</button>
 </view>
 </form>
@@ -39,6 +38,5 @@ To:{{item.receiverName}}</text>
 <view class="jiaobiao">
 <text style="color:green;font-size:13px;">已反馈</text></view>
 </view>
-
 </view>
 </view>
