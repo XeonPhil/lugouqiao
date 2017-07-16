@@ -18,7 +18,7 @@
 
 <view class="buttonview">
 <!--<button style="opacity: {{opacity}};color: green;border-color: green" disabled="{{disabled}}" loading="{{loginLoading}}" size="mini" class="button1" form-type="submit" plain>预览</button>-->
-<button size="mini" style="opacity: {{opacity}};color: white;background-color: green;border-color:green" class="button2" form-type="submit">发布</button>
+<button size="mini" style="color: white;background-color: green;border-color:green" class="button2" form-type="submit">发布</button>
 </view>
 </form>
 </view>  

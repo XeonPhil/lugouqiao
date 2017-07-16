@@ -1,17 +1,27 @@
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" bindtap="navbarTap">{{item}}</text>  
+</view>   
+ 
+<!--首页-->  
+<view hidden="{{currentTab!==0}}">  
 
-<!--index.wxml-->
-<view class="circle-out" >
-  <view class="circle-in"  > 
-  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
-  <view class="menu-list"  catchtouchmove="buttonMove" catchtouchstart="buttonStart" catchtouchend="buttonEnd">
-    <view class="menu-item" wx:for="{{menuList}}" wx:key="unique"  animation="{{animationData}}">
-      <view class="menu-circle-item" style="-webkit-transform: rotate({{item.deg}}deg);" data-menu="{{item.menu}}"  >
-        <image class="image-style" src="{{item.src}}"></image>
-      </view>
-      <view class="menu-circle-text-item" style="-webkit-transform: rotate({{item.deg}}deg);">
-        <text class="text-style">{{item.menu}}</text>
-      </view>
-    </view>
-  </view>
- </view>
+
+
+</view>  
+  <!--搜索-->  
+<view hidden="{{currentTab!==1}}">
+<view class="liuyan">
+<text style="color:lightgrey;font-size:13px " >
+From:2014级数字媒体技术3班\t李郡城</text>
+<view>标题</view>
+<view><text style="font-size:13px ">老师您第四章作业还没布置</text></view>
+<view class="duiqi">
+<view class="jiaobiao">
+<text style="color:lightgrey;font-size:13px " >2017-5-15</text></view>
+<view class="jiaobiao">
+<text style="color:green;font-size:13px;">已反馈</text></view>
+<view class="jiaobiao" bindtap="toast" >
+<text  style="color:blue;font-size:13px; margin-left: 50% ">更改</text></view>
+</view>
+</view>
 </view>

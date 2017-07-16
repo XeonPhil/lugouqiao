@@ -5,7 +5,7 @@
     "pages/main/main",
     "pages/info/info",
     "pages/test/test1",
-    "pages/choose_teacher/choose_teacher"
+    "pages/change_huifu/change_huifu"
   ],
   "window": {
     "backgroundTextStyle": "light",

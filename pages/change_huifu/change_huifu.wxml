@@ -1,0 +1,25 @@
+<!--choose_teacher.wxml-->
+<view class="liuyan">
+<text style="color:lightgrey;font-size:13px " >
+From:2014级数字媒体技术3班\t李郡城</text>
+<view>标题</view>
+<view><text style="font-size:13px ">老师您第四章作业还没布置</text></view>
+<view class="duiqi">
+<view class="jiaobiao">
+<text style="color:lightgrey;font-size:13px " >2017-5-15</text></view>
+</view>
+</view>
+
+
+
+<view class="input1">
+<textarea bindblur="charchange" class="input" valeue="{{inputMsg}}" style="color:black" placeholder="  在这里回复..."></textarea>
+</view>
+
+<view class="buttonview">
+<button size="mini" style="color: white;background-color: green;border-color:green" class="button2" form-type="submit"  bindtap="showModal">更改</button>
+</view>
+<view>
+  <modal title="回复成功" hidden="{{modalHidden}}" confirm-text="继续回复" cancel-text="取消"
+  bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel"></modal>
+</view>

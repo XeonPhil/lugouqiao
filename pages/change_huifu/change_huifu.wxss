@@ -1,0 +1,40 @@
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+  background-color:#efeff4;
+} 
+.duiqi{
+  display:flex;
+}
+.jiaobiao{
+  width: 50%;
+ 
+}
+.liuyan{
+  background: white;
+  border-bottom: 1px solid #efeff4;
+  line-height: 25px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.input{
+  height: 150px;
+  width: 100%;
+  background-color: white;
+} 
+.input1{
+  height: 200px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid #efeff4;
+  border-top: 15px solid #efeff4;
+} 
+.buttonview{
+  display: flex;
+  flex-direction: row;
+}
+.button2{
+  margin-top: 10%;
+}
