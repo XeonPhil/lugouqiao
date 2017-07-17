@@ -6,17 +6,19 @@ Page({
     logs1:[],  
     text:'',
     inputMsg:'',
-    array: ['陈伟', '雷玲', '于瀛', '蓝善祯', '徐品'],
-    index: 0
+    //array: ['陈伟', '雷玲', '于瀛', '蓝善祯', '徐品'],
+    flag: 0,
+    array:''
     },
     onLoad:function()
     {
       this.getdata();
+      this.getteacher();
     },
     bindPickerChange: function (e) {
       // console.log('picker发送选择改变，携带值为', e.detail.value)
       this.setData({
-        index: e.detail.value
+        flag: e.detail.value
       })
     },
     navbarTap: function (e) {
@@ -28,17 +30,32 @@ Page({
     getdata:function () {
       var that = this;
       wx.request({
-        url: 'https://xeonphil.top/message/pull/idsh6jxhjc6jvxvnjrnnc82bch6vk',
+        url: 'https://xeonphil.top/message/pull/o4_bmasdasdsad6_4sgVt7hMZOPfL',
         data:{},
         method:'GET',
         success:function(res){
           //console.log(res.data);
           that.setData({
-            logs1:res.data.data
+            logs1:res.data
           })
-          console.log(res.data.data);
+          console.log(res.data);
         },
         fail:function(err){}
+      })
+    },
+    getteacher: function () {
+      var that = this;
+      wx.request({
+        url: 'https://xeonphil.top/user/pull-accessible-teachers/o4_bmasdasdsad6_4sgVt7hMZOPfL',
+        data: {},
+        method: 'GET',
+        success: function (res) {
+          console.log(res.data);
+          that.setData({
+            array: res.data
+          })
+        },
+        fail: function (err) { }
       })
     },
     charchange:function(e){

@@ -9,9 +9,10 @@
 </view>
 
 <view class="input2">
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">
-      选择老师：{{array[index]}}
+选择老师：
+  <picker bindchange="bindPickerChange" value="{{flag}}" range="{{array}}">
+    <view class="picker" value="{{array}}">
+      {{array[flag].name}}
     </view>
   </picker>
 </view>
@@ -34,9 +35,10 @@ To:{{item.receiverName}}</text>
 <view>发送者:{{item.senderName}}</view>
 <view class="duiqi">
 <view class="jiaobiao">
-<text style="color:lightgrey;font-size:13px " >2017-5-15\t某老师</text></view>
+<text style="color:lightgrey;font-size:13px " >{{item.time}}\t{{item.receiverName}}</text></view>
 <view class="jiaobiao">
-<text style="color:green;font-size:13px;">已反馈</text></view>
+<text style="color:green;font-size:13px;">已反馈</text>
+</view>
 </view>
 </view>
 </view>
