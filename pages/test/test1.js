@@ -8,7 +8,8 @@ Page({
     inputMsg:'',
     //array: ['陈伟', '雷玲', '于瀛', '蓝善祯', '徐品'],
     flag: 0,
-    array:''
+    teacher_arr:[],
+    pick_arr:''
     },
     onLoad:function()
     {
@@ -38,7 +39,7 @@ Page({
           that.setData({
             logs1:res.data
           })
-          console.log(res.data);
+          //console.log(res.data);
         },
         fail:function(err){}
       })
@@ -50,12 +51,13 @@ Page({
         data: {},
         method: 'GET',
         success: function (res) {
-          console.log(res.data);
           that.setData({
-            array: res.data
+            teacher_arr: res.data
           })
+          console.log(res.data);
         },
         fail: function (err) { }
+        
       })
     },
     charchange:function(e){
@@ -67,12 +69,19 @@ Page({
     msgSubmit: function(e){
       this.setData({
         inputMsg:this.data.inputMsg,
+        teacher_arr:this.data.teacher_arr,
       })
+      console.log(this.data);
+      var index=this.data.flag;
+      console.log(index);
       var that = this;
       wx.request({
-        url: 'https://xeonphil.top/message/push/o4_bmasdasdsad6_4sgVt7hMZOPfL/idsh6jxhjc6jvxvnjrnnc82bch6vk',
+        url: 'https://xeonphil.top/message/push',
 //        header: { "Content-Type": "application/json"},
-        data: {text: this.data.inputMsg},
+        data: { text: this.data.inputMsg,
+                senderUID:'o4_bmasdasdsad6_4sgVt7hMZOPfL',
+                receiverUID: this.data.teacher_arr[index].UID,
+              },
         method: 'POST',
       })
       wx.showToast({
