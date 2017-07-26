@@ -6,7 +6,8 @@
     "pages/info/info",
     "pages/test/test1",
     "pages/change_huifu/change_huifu",
-    "pages/id/id"
+    "pages/id/id",
+    "pages/LoginSucess/LoginSucess"
   ],
   "window": {
     "backgroundTextStyle": "light",

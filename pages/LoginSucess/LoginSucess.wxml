@@ -1,0 +1,11 @@
+<!--LoginSucess.wxml-->
+<view class="group">
+  <block>
+    <icon type="success" size="70"/>
+  </block>
+</view>
+<view class="text1">注册成功</view>
+<view class="text2">您已成功注册到我们的系统</view>
+  <view class="create">
+        <button class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit">进入</button>
+    </view>

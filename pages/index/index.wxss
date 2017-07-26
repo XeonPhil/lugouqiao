@@ -1,21 +1,55 @@
 /**index.wxss**/
-.userinfo {
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+  background-color:#efeff4;
+} 
+.add-page{
   display: flex;
   flex-direction: column;
+  font-size: 32rpx;
+  color: #676767;
+  padding: 30rpx 0;
+}
+.mod-a{
+  padding: 0 20rpx;
+  border: 1px solid #f0f0f0;
+  background-color: #fff;
+}
+
+.mod{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  height: 90rpx;
+  padding: 0 20rpx;
 }
-
-.userinfo-avatar {
-  width: 156rpx;
-  height: 156rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.laoshi{
+  margin-top: 10%;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.ss{
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-
-.usermotto {
-  margin-top: 200px;
+.s{
+  margin-left: 15px;
+  padding-top: 10px;
+  padding-bottom:10px; 
+}
+.create{
+  margin-top: 80rpx;
+  padding: 0 26rpx;
+}
+.btn{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+ background-color: #2caf6d;
+}
+button-hover{
+  background-color: #2caf6d;
+  color: #aadfc4;
 }

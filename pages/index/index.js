@@ -3,13 +3,29 @@
 var app = getApp()
 Page({
   data: {
-    motto: '欢迎来到cucmooc',
-    userInfo: {}
+    array: ['老师', '学生'],
+    Xiarray: ['数字媒体技术', '广播电视工程','自动化'],
+    index: 0,
+    index1:0,
+    currentTab:0
   },
-  //事件处理函数
-  bindViewTap: function() {
+  bindPickerChange: function (e) {
+
+    this.setData({
+      index: e.detail.value,
+      currentTab: e.detail.value
+    })
+  },
+  bindXiChange: function (e) {
+    //console.log('picker发送选择改变，携带值为', e.detail.value)
+
+    this.setData({
+      index1: e.detail.value,
+    })
+  },
+  bindSubmit: function (e) {
     wx.navigateTo({
-      url: '../main/main'
+      url: '../LoginSucess/LoginSucess',
     })
   },
   onLoad: function () {

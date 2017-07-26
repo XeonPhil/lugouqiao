@@ -1,0 +1,31 @@
+/* LoginSucess.wxss */
+.group{
+  display: flex;
+justify-content: center;
+margin-top: 20%;
+}
+.text1{
+  margin-top: 7%;
+   display: flex;
+justify-content: center;
+font-weight:bold;
+font-family: "微软雅黑";
+}
+.text2{
+  margin-top: 3%;
+display: flex;
+justify-content: center;
+font-size: 32rpx;
+  color: #676767;
+  font-family: "微软雅黑";
+}
+.create{
+  margin-top: 80rpx;
+  padding: 0 26rpx;
+}
+.btn{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+ background-color: #2caf6d;
+}
