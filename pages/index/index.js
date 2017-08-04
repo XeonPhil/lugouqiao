@@ -11,8 +11,15 @@ Page({
     index2:0,
     currentTab:0
   },
+  onShow: function (options) {
+    // Do some initialize when page load.
+    wx.showToast({
+      title: '请先注册',
+      icon: 'success',
+      duration: 2000
+    })
+  },
   bindPickerChange: function (e) {
-
     this.setData({
       index: e.detail.value,
       currentTab: e.detail.value
