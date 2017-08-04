@@ -25,7 +25,7 @@
 </view>  
   <!--搜索-->  
 <view hidden="{{currentTab!==1}}">
-<view wx:for="{{logs1}}" class="liuyan" >
+<view wx:for="{{logs1}}" class="liuyan">
 <text style="color:lightgrey;font-size:13px " >
 To:{{item.receiverName}}
 </text>

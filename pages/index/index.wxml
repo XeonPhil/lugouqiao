@@ -49,8 +49,36 @@
     </view>
 </view>  
 <!--选学生-->
-<view hidden="{{currentTab==0}}">  
-jjj
+<view class="laoshi"  hidden="{{currentTab==0}}">  
+<view class="s">   <text>请填写个人信息</text></view>
+<view class="mod-a mt20">
+   <view class="mod t-address">
+             <text>姓名</text>
+          <input  placeholder="**文（请输入姓名）">hhh</input>
+    </view>
+     <view class="mod t-address" style="border-top: 1px solid #efeff4">
+             <text>职位</text>
+          <input  placeholder="如：班长，没有职位不填">hhh</input>
+    </view>
+    <view class="mod t-address" style="border-top: 1px solid #efeff4">
+             <text>学号</text>
+          <input  placeholder="请输入学号">hhh</input>
+    </view>
+  </view>
+   <view class="s">   <text>请输入班级</text></view>  
+  <view class="mod-a mt20">
+   <view class="mod t-address">
+             <text>班级</text>
+                  <picker bindchange="bindClassChange" value="{{index2}}" range="{{classrray}}"> 
+    <view >
+      {{classrray[index2]}}
+    </view>
+  </picker>
+    </view>
+  </view>
+  <view class="create">
+        <button class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit">下一步</button>
+    </view>
 </view>  
 </view>
 

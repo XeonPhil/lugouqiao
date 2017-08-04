@@ -5,8 +5,10 @@ Page({
   data: {
     array: ['老师', '学生'],
     Xiarray: ['数字媒体技术', '广播电视工程','自动化'],
+    classrray: ['2014级数字媒体技术1班', '2014级数字媒体技术2班'],
     index: 0,
     index1:0,
+    index2:0,
     currentTab:0
   },
   bindPickerChange: function (e) {
@@ -21,6 +23,13 @@ Page({
 
     this.setData({
       index1: e.detail.value,
+    })
+  },
+  bindClassChange: function (e) {
+    //console.log('picker发送选择改变，携带值为', e.detail.value)
+
+    this.setData({
+      index2: e.detail.value,
     })
   },
   bindSubmit: function (e) {
