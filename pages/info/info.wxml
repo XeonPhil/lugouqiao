@@ -4,9 +4,6 @@
  
 <!--首页-->  
 <view hidden="{{currentTab!==0}}">  
-
-
-
 </view>  
   <!--搜索-->  
 <view hidden="{{currentTab!==1}}">
