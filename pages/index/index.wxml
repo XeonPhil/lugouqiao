@@ -1,56 +1,87 @@
-<!--index.wxml-->
-<!--<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">hh
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>-->
 <view class="add-page">
-<!--选择身份-->
-<text class="ss">请选择您的身份</text>
-  <view class="mod-a">
-        <view class="mod t-name">
-            <text>身份</text>
-             <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}"> 
-    <view class="picker">
-      {{array[index]}}
+              <!--选择身份-->
+  <text class="ss">请选择您的身份</text>
+    <view class="mod-a">
+      <view class="mod t-name"> 
+        <text>身份</text>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}"> 
+          <view class="picker">
+             {{array[index]}}
+          </view>
+        </picker>
+      </view>         
     </view>
-  </picker>
-        </view>         
+             <!--选老师-->
+  <view class="laoshi" hidden="{{currentTab==1}}">  
+             <!--选系-->
+    <view class="s"> 
+      <text>请选择您所任职的系</text>
+    </view>  
+    <view class="mod-a mt20">
+      <view class="mod t-address">
+        <text>专业</text> 
+        <picker bindchange="bindXiChange" value="{{index1}}" range="{{acGroup}}"> 
+          <view>
+            {{acGroup[index1].major}}
+          </view>
+        </picker>
+      </view>
     </view>
-<!--选老师-->
-<view class="laoshi" hidden="{{currentTab==1}}">  
-        <!--选系-->
- <view class="s">   <text>请选择您所任职的系</text></view>  
-  <view class="mod-a mt20">
-   <view class="mod t-address">
-             <text>专业</text>
-                  <picker bindchange="bindXiChange" value="{{index1}}" range="{{Xiarray}}"> 
-    <view >
-      {{Xiarray[index1]}}
-    </view>
-  </picker>
-    </view>
-  </view>
       <!--姓名-->
-      <view class="s"> <text >请填写个人信息</text></view>
-<view class="mod-a mt20">
-   <view class="mod t-address">
-             <text>姓名</text>
-          <input  placeholder="**文（请输入姓名）">hhh</input>
+    <view class="s"> <text>请填写个人信息</text></view>
+    <view class="mod-a mt20">
+      <view class="mod t-address">
+        <text>姓名</text>
+        <input bindblur="InputName" value="{{inputname}}"  placeholder="（请输入姓名）">hhh</input>
+      </view>
     </view>
-  </view>
   <!-- 创建按钮 -->
     <view class="create">
-        <button class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit">下一步</button>
+      <button class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit_tea">下一步</button>
     </view>
-</view>  
+  </view>  
 <!--选学生-->
-<view hidden="{{currentTab==0}}">  
-jjj
-</view>  
-</view>
+  <view class="laoshi"  hidden="{{currentTab==0}}">   
+    <view class="s">   <text>请填写个人信息</text>  
+    </view> 
+    <view class="mod-a mt20"> 
+      <view class="mod t-address">
+        <text>姓名</text>            
+        <input bindblur="InputName" value="{{inputname}}" placeholder="（请输入姓名）">hhh</input> 
+      </view> 
+      <view class="mod t-address" style="border-top: 1px solid #efeff4"> 
+        <text>学号</text> 
+        <input bindblur="Input_stuid" value="{{student_id}}"  placeholder="请输入学号">hhh</input> 
+      </view> 
+      <view class="mod t-address" style="border-top: 1px solid #efeff4"> 
+        <text>职位</text> 
+        <input  placeholder="如：班长，没有职位不填">hhh</input> 
+      </view> 
+    </view> 
+    <view class="mod-a mt20"> 
+      <view class="mod t-address"> 
+        <text>专业</text>
+        <picker bindchange="bindMajorChange" value="{{index2}}" range="{{acGroup}}">  
+          <view class="picker" value="{{index2}}"> 
+            {{acGroup[index2].major}} 
+          </view> 
+        </picker> 
+      </view> 
+    </view>        
+    <view class="mod-a mt20"> 
+      <view class="mod t-address"> 
+        <text>班级</text>
+        <picker bindchange="bindClassChange" value="{{index3}}" range="{{acGroup}}">  
+          <view class="picker" value="{{index3}}"> 
+            {{acGroup[index2].class[index3].group_name}} 
+          </view> 
+        </picker> 
+      </view> 
+    </view> 
+    <view class="create">
+      <button class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit_stu">下一步</button> 
+    </view> 
+  </view>   
+</view> 
+
 

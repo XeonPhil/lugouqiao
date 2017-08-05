@@ -1,22 +1,24 @@
-const APP_ID = 'wxac1aca1ac555851a';//输入小程序appid
-const APP_SECRET = '';//输入小程序app_secret
-var OPEN_ID = ''//储存获取到openid
-var SESSION_KEY = ''//储存获取到session_key
+const APP_ID ='wxac1aca1ac555851a';//输入小程序appid
+const APP_SECRET ='89458e7f1a93433b90f11789717013da';//输入小程序app_secret
+var OPEN_ID=''//储存获取到openid
+var SESSION_KEY=''//储存获取到session_key
 Page({
-  getOpenIdTap: function () {
-    var that = this;
+  getOpenIdTap:function(){
+    var that=this;
     wx.login({
-      success: function (res) {
+      success:function(res){
+        var l = 'https://xeonphil.top/message/pull/n';
         wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session',
-          data: {
-            appid: APP_ID,
-            secret: APP_SECRET,
-            js_code: res.code,
-            grant_type: 'authorization_code'
+            //获取openid接口
+          url: l,
+          data:{
+            appid:APP_ID,
+            secret:APP_SECRET,
+            js_code:res.code,
+            grant_type:'authorization_code'
           },
-          method: 'GET',
-          success: function (res) {
+          method:'GET',
+          success:function(res){
             console.log(res.data)
             OPEN_ID = res.data.openid;//获取到的openid
             SESSION_KEY = res.data.session_key;//获取到session_key

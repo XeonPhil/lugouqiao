@@ -1,4 +1,3 @@
-<!--id.wxml-->
 <button bindtap="getOpenIdTap">获取用户唯一标识openid</button>
 <view class="classname">openid:{{openid}}</view>
 <view class="classname">session_key:{{session_key}}</view>

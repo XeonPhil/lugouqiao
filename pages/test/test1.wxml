@@ -5,7 +5,7 @@
 <view hidden="{{currentTab!==0}}">  
 <form bindsubmit="msgSubmit">
 <view class="input1">
-<textarea bindblur="charchange" class="input" valeue="{{inputMsg}}" style="color:black" placeholder="  想要留言..."></textarea>
+<textarea bindblur="charchange" class="input" value="{{inputMsg}}" style="color:black" placeholder="  想要留言..."></textarea>
 </view>
 
 <view class="input2">
