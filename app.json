@@ -24,6 +24,7 @@
       {
         "selectedIconPath": "images/paper_plane 2.png",
         "iconPath": "images/paper_plane.png",
+        "pagePath": "pages/info/info",
         "text": "通知"
       },
       {
@@ -41,7 +42,6 @@
       {
         "selectedIconPath": "images/home_176px_1201101_easyicon.net 2.png",
         "iconPath": "images/home_176px_1201101_easyicon.net.png",
-//        "pagePath": "pages/id/id",
         "pagePath": "pages/logs/logs",
         "text": "我的"
       }

@@ -6,7 +6,6 @@ Page({
   data: {
     array: ['老师', '学生'],
     Xiarray: ['数字媒体技术', '广播电视工程','自动化'],
-//    classarray:[],
     index:0,
     index1:0,
     index2:0,
