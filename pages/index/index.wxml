@@ -61,9 +61,9 @@
     <view class="mod-a mt20"> 
       <view class="mod t-address"> 
         <text>专业</text>
-        <picker bindchange="bindMajorChange" value="{{index2}}" range="{{acGroup}}">  
-          <view class="picker" value="{{index2}}"> 
-            {{acGroup[index2].major}} 
+        <picker bindchange="bindMajorChange" value="{{majorName}}" range="{{majorNameGroup}}">  
+          <view class="picker" value="{{majorName}}" > 
+            {{majorName}} 
           </view> 
         </picker> 
       </view> 

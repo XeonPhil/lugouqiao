@@ -8,12 +8,13 @@ Page({
     Xiarray: ['数字媒体技术', '广播电视工程','自动化'],
     index:0,
     index1:0,
-    index2:0,
-    index3:0,
+    majorName:'',
+    classIndex:0,
     currentTab:0,
     inputname:'',
     student_id:'',
-    acGroup:[],
+    majorNameGroup:{},
+    classGroup:[],
     acGroup_num:0,
   },
   onShow: function(options) {
@@ -123,10 +124,15 @@ Page({
       data: {},
       method: 'GET',
       success: function (res) {
-//        console.log(res.data.length);
+        console.log(res.data.length);
+        console.log(res.data);
+        var classDict = {}
+        console.log('新的返回格式:'majorArray)
         that.setData({
-          acGroup: res.data,
-          acGroup_num:res.data.length,
+          majorNameGroup: Object.keys(res.data),
+          classGroup:classDict[that.data.majorName],
+          majorName: Object.keys(res.data)[1],
+          classIndex:1
         })
       },
       fail: function (err) { }
