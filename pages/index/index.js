@@ -127,9 +127,10 @@ Page({
         console.log(res.data.length);
         console.log(res.data);
         var classDict = {}
-        console.log('新的返回格式:'+majorArray)
+//        console.log('新的返回格式:'+majorArray)
         that.setData({
           majorNameGroup: Object.keys(res.data),
+//          majorNameGroup: res.data,
           classGroup:classDict[that.data.majorName],
           majorName: Object.keys(res.data)[1],
           classIndex:1
