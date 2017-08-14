@@ -20,9 +20,9 @@
     <view class="mod-a mt20">
       <view class="mod t-address">
         <text>专业</text> 
-        <picker bindchange="bindXiChange" value="{{index1}}" range="{{acGroup}}"> 
+        <picker bindchange="bindXiChange" value="{{xiIndex}}" range="{{majorNameGroup}}"> 
           <view>
-            {{acGroup[index1].major}}
+            {{xiName}}
           </view>
         </picker>
       </view>
@@ -61,8 +61,8 @@
     <view class="mod-a mt20"> 
       <view class="mod t-address"> 
         <text>专业</text>
-        <picker bindchange="bindMajorChange" value="{{majorName}}" range="{{majorNameGroup}}">  
-          <view class="picker" value="{{majorName}}" > 
+        <picker bindchange="bindMajorChange" value="{{majorIndex}}" range="{{majorNameGroup}}">  
+          <view class="picker" value="{{majorIndex}}" > 
             {{majorName}} 
           </view> 
         </picker> 
@@ -71,9 +71,9 @@
     <view class="mod-a mt20"> 
       <view class="mod t-address"> 
         <text>班级</text>
-        <picker bindchange="bindClassChange" value="{{index3}}" range="{{acGroup}}">  
-          <view class="picker" value="{{index3}}"> 
-            {{acGroup[index2].class[index3].group_name}} 
+        <picker bindchange="bindClassChange" value="{{classIndex}}" range="{{classGroup}}">  
+          <view class="picker" value="{{classIndex}}"> 
+            {{className}} 
           </view> 
         </picker> 
       </view> 

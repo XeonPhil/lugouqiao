@@ -7,18 +7,24 @@ Page({
     array: ['老师', '学生'],
     Xiarray: ['数字媒体技术', '广播电视工程','自动化'],
     index:0,
-    index1:0,
+    xiIndex:0,
+    xiName:'请选择任教专业',
+    majorIndex:0,
     majorName:'',
     classIndex:0,
     currentTab:0,
     inputname:'',
     student_id:'',
     majorNameGroup:{},
-    classGroup:[],
+    classNameGroup:[],
+    classGroup:{},
     acGroup_num:0,
+    classDict:{},
+    className:'',
+    majorGroupid:'',
+    xiGroup:{}
   },
   onShow: function(options) {
-           // Do some initialize when page load
            wx.showToast({
              title: '请先注册', 
              icon: 'success', 
@@ -34,21 +40,23 @@ Page({
   bindClassChange: function (e) {
     //console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-       index3: e.detail.value, 
+      classIndex: e.detail.value, 
     })
+    this.getAcgroup();
   },
   bindMajorChange: function (e) {
-    //console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index2: e.detail.value,
-    })
+      majorIndex: e.detail.value,      
+      classIndex: 0, 
+    }),
+      this.getAcgroup();
   },
 
   bindXiChange: function (e) {
-    //console.log('picker发送选择改变，携带值为', e.detail.value)
-
+    var that=this;
     this.setData({
-      index1: e.detail.value,
+      xiIndex: e.detail.value,
+      xiName: that.data.majorNameGroup[e.detail.value],
     })
   },
   InputName: function (e) {
@@ -75,7 +83,7 @@ Page({
           data: {
             code: res.code,
             name: that.data.inputname,
-            major: that.data.acGroup[that.data.index1].major,
+            major:that.data.xiGroup[that.data.majorName],
             },
             success: function (){
               wx.navigateTo({
@@ -104,13 +112,16 @@ Page({
           data: {
             code: res.code,
             name: that.data.inputname,
-            major: that.data.acGroup[that.data.index2].major,
+            major:that.data.majorGroupid,
             student_id:that.data.student_id
             },
-          success: function () {
+          success: function (res) {
+            //var app = getApp();
+            //app.session_key_b = res.data['session_key_b'];
             wx.navigateTo({
-              url: '../LoginSucess/LoginSucess',
+              url: '../LoginSucess/LoginSucess?session_key_b=' + res.data['session_key_b'],
             })
+            console.log(res.data['session_key_b']);
           },
           fail: function (err) { }
         })
@@ -120,32 +131,52 @@ Page({
   getAcgroup:function(){
     var that = this;
     wx.request({
-      url: 'https://xeonphil.top/group/administrative-class',
+      url: 'https://xeonphil.top/group/admin-class',
       data: {},
       method: 'GET',
       success: function (res) {
-        console.log(res.data.length);
-        console.log(res.data);
-        var classDict = {}
-//        console.log('新的返回格式:'+majorArray)
-        that.setData({
+        that.setData({//major
           majorNameGroup: Object.keys(res.data),
-//          majorNameGroup: res.data,
-          classGroup:classDict[that.data.majorName],
-          majorName: Object.keys(res.data)[1],
-          classIndex:1
+          classDict:res.data,        
+          majorName: Object.keys(res.data)[that.data.majorIndex],
+       //classGroup: that.data.classDict[majorName],        
+        }),
+        that.setData({//class
+          classGroup: that.data.classDict[that.data.majorName],
+          className: that.data.classDict[that.data.majorName][that.data.classIndex].group_name,
+          majorGroupid: that.data.classDict[that.data.majorName][that.data.classIndex].groupID
         })
+        //console.log(that.data.classDict[that.data.majorName])
+        //console.log(Object.values(that.data.classGroup))
       },
       fail: function (err) { }
     })
-    /*that.setData({
-      'Xarray': that.data.Xarray.push(acGroup[0].groupname)
-      });*/
+      console.log('getac')
   },
+  getxiGroup:function(){
+    var that=this;
+    wx.request({
+      url: 'https://xeonphil.top/group/majors',
+      method:'GET',
+      success:function(res){
+        that.setData({
+          xiGroup:res.data
+        })
+      }
+    })
+  },
+/*  getClassName:function(){
+    var that=this;
+    that.setData({
+      classNameGroup:Object.assign({},that.data.classDict),
+    })
+    console.log('getclassname')
+    console.log(that.data.classDict)
+  },*/
   onLoad: function () {
     console.log('onLoad')
     this.getAcgroup();
-    console.log(this.data.acGroup);
+    this.getxiGroup();
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){

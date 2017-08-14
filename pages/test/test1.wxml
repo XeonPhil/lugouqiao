@@ -27,13 +27,18 @@
 <view hidden="{{currentTab!==1}}">
 <view wx:for="{{logs1}}" class="liuyan">
 <text style="color:lightgrey;font-size:13px " >
-To:{{item.receiverName}}
+To:{{item.receive_teacher_name}}
 </text>
 <view>内容:{{item.text}}</view>
 <view>
-<text style="font-size:13px ">————回答:{{item.reply.text}}</text>
+<view wx:if="{{item.reply==null}}">
+<text style="font-size:13px ">————未回复</text>
 </view>
-<view>发送者:{{item.senderName}}</view>
+<view class="duiqi" wx:else>
+<text style="color:green;font-size:13px ">————回复：{{item.reply}}</text>
+</view>
+</view>
+<!--<view>发送者:{{item.senderName}}</view>!-->
 <view class="duiqi">
 <view class="jiaobiao">
 <text style="color:lightgrey;font-size:13px " >{{item.time}}\t{{item.receiverName}}</text>

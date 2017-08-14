@@ -4,7 +4,7 @@ App({
     appid: 'wxac1aca1ac555851a',//appid需自己提供，此处的appid我随机编写  
     secret: '89458e7f1a93433b90f11789717013da',//secret需自己提供，此处的secret我随机编写  
     userInfo: null,
-    openid:''
+    session_key_b:''
   },
   getUserInfo: function (cb) {
     var that = this
